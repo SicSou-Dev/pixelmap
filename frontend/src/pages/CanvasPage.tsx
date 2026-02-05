@@ -106,15 +106,15 @@ export function CanvasPage({
 
   // Draw canvas on effect
   useEffect(() => {
-    const canvas = canvasRef.current;
-    if (!canvas) return;
+    const canvasElement = canvasRef.current;
+    if (!canvasElement) return;
 
-    const ctx = canvas.getContext('2d');
+    const ctx = canvasElement.getContext('2d');
     if (!ctx) return;
 
     // Clear canvas
     ctx.fillStyle = '#ffffff';
-    ctx.fillRect(0, 0, canvas.width, canvas.height);
+    ctx.fillRect(0, 0, canvasElement.width, canvasElement.height);
 
     // Draw pixels
     for (const [key, color] of Object.entries(canvas)) {
